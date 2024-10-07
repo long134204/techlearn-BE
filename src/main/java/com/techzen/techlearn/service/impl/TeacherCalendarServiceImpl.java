@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
+// import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -211,5 +211,10 @@ public class TeacherCalendarServiceImpl implements TeacherCalendar2Service {
         return teacherCalendarRepository.findCourseChapterTeacherMentor(idCourse, idChapter, startDate, endDate)
                 .stream().map(teacherCalendarMapper::toDTO)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<TeacherCalendar> getEventsBetween(LocalDateTime start, LocalDateTime end) {
+        return teacherCalendarRepository.findByStartTimeBetween(start, end);
     }
 }
