@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 logs/
-
+.env
 ### STS ###
 .apt_generated
 .classpath
@@ -32,3 +32,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### credentials ###
+src/main/resources/credentials.json
